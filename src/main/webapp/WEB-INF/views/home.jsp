@@ -2,13 +2,15 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+    <title>Home</title>
 </head>
 <body>
 <h1>
-	Hello world!  
+    Hello world!
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>Username is ${username}</P>
+<br>
+<a href="<c:url value="j_spring_security_logout" />" target="_self">Logout</a>
 </body>
 </html>

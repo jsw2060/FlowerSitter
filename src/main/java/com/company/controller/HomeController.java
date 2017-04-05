@@ -28,20 +28,14 @@ import com.company.dao.IDao;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-		
-	//ContentDao dao;
 	
 	@Autowired
 	private SqlSession sqlSessoon;
 	
-	/*@Autowired
-	public void setDao(ContentDao dao) {
-		this.dao = dao;
-	}*/
-	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -55,18 +49,16 @@ public class HomeController {
 		
 		return "home";
 	}
-
+	
 	@RequestMapping("/list")
 	public String list(Model model) {
 		
 		IDao dao = sqlSessoon.getMapper(IDao.class);
-		
 		model.addAttribute("list", dao.listDao());
-		
 		return "/list";
 	}
 	
-	/*@RequestMapping("/writeForm")
+	@RequestMapping("/writeForm")
 	public String writeForm() {
 		
 		return "/writeForm";
@@ -74,6 +66,7 @@ public class HomeController {
 	
 	@RequestMapping("/write")
 	public String write(HttpServletRequest request, Model model) {
+		IDao dao = sqlSessoon.getMapper(IDao.class);
 		dao.writeDao(request.getParameter("mWriter"), request.getParameter("mContent"));
 		return "redirect:list";
 	}
@@ -86,8 +79,9 @@ public class HomeController {
 	
 	@RequestMapping("/delete")
 	public String delete(HttpServletRequest request, Model model) {
+		IDao dao = sqlSessoon.getMapper(IDao.class);
 		dao.deleteDao(request.getParameter("mId"));
 		return "redirect:list";
-	}*/
+	}
 	
 }

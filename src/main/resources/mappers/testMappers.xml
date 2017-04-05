@@ -8,11 +8,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM BOARD ORDER BY MID DESC
 	</select>
 	
-	<!-- <insert id="writeDao">
+	<!-- #{param} is considering database data type
+		${param} is non-considering database data type -->
+	<insert id="writeDao">
 		INSERT INTO BOARD (MID, MWRITER, MCONTENT) VALUES (BOARD_SEQ.NEXTVAL, #{param1}, #{param2})
 	</insert>
 	
 	<delete id="deleteDao">
 		DELETE FROM BOARD WHERE MID = #{param1}
-	</delete> -->
+	</delete>
 </mapper>
