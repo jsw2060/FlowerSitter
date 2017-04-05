@@ -1,7 +1,6 @@
 package com.company.controller;
 
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -16,9 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.company.dto.ContentDto;
 import com.company.controller.HomeController;
-//import com.company.dao.ContentDao;
 import com.company.dao.IDao;
 
 /**
