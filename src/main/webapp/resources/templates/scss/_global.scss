@@ -1,0 +1,24 @@
+// Global styling for this template
+// Body padding for the fixed navbar and sidebar
+body {
+    padding-top: 54px;
+    padding-left: 0;
+    @media (min-width: 992px) {
+        padding-top: 56px;
+        padding-left: 250px;
+    }
+}
+
+// Helper class for the overflow property
+.o-hidden {
+    overflow: hidden !important;
+}
+
+// Helper classes for z-index
+.z-0 {
+    z-index: 0;
+}
+
+.z-1 {
+    z-index: 1;
+}
